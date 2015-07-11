@@ -12,15 +12,19 @@
 <body>
     <div id="map" style="position:absolute; top:0; bottom:25%; left:0; right:0;"></div>
     <div id="bottom" style="position:absolute; top:75%; bottom:0; left:5%; right:5%;">
-        <h5 class="align-center">Where does my mobile device think it is located?</h5>
-        <p>
-            <span id="instructions">Start by clicking on the map where you currently are located. Try to pan & zoom to be as accurate as you can for testing.</span>
-            <br><span id="points"></span>
-        </p>
-        <button id="button-locateme" class="span3 offset2 btn btn-success btn-large hidden"><span class="glyphicon glyphicon-map-marker"></span> Locate Me</button>
-        <button id="button-locateme-stop" class="span3 btn btn-warning btn-large hidden"><span class="glyphicon glyphicon-stop"></span> Stop</button>
-        <a id="button-locateme-data" class="span3 btn btn-info btn-large hidden" data-toggle="modal" href="#modal-data"><span class="glyphicon glyphicon-list"></span> GPS Information</a>
-        <small><a id="about" class="pull-right" data-toggle="modal" href="#modal-about">About</a></small>
+        <div>
+            <h5 class="align-center">Where does my mobile device think it is located?</h5>
+            <p>
+                <span id="instructions">Start by clicking on the map where you currently are located. Try to pan & zoom to be as accurate as you can for testing.</span>
+                <br><span id="points"></span>
+            </p>
+            <button id="button-locateme" class="span3 offset2 btn btn-success btn-large hidden"><span class="glyphicon glyphicon-map-marker"></span> Locate Me</button>
+            <button id="button-locateme-stop" class="span3 btn btn-warning btn-large hidden"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+            <a id="button-locateme-data" class="span3 btn btn-info btn-large hidden" data-toggle="modal" href="#modal-data"><span class="glyphicon glyphicon-list"></span> GPS Information</a>
+        </div>
+        <div>
+            <small><a id="about" class="pull-right" data-toggle="modal" href="#modal-about">About</a></small>
+        </div>
     </div>
     <!-- Data Modal -->
     <div class="modal fade" id="modal-data" tabindex="-1">
