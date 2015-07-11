@@ -8,6 +8,6 @@ static web content. There is no back-end/server-side processing.
 
 This code falls under a use license found in LICENSE.TXT.
 
-Some javascript code was was derived from Chris Veness's work found at
+Some javascript code was derived from Chris Veness's work found at
 https://github.com/chrisveness/geodesy. Thanks Chris! It would have
 taken much longer to do this without your blood, sweat, and tears.
