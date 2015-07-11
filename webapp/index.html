@@ -14,14 +14,15 @@
     <div id="bottom" style="position:absolute; top:75%; bottom:0; left:5%; right:5%;">
         <h5 class="align-center">Where does my mobile device think it is located?</h5>
         <p>
-            <span id="instructions">Start by clicking on the map where you currently are located.</span>
+            <span id="instructions">Start by clicking on the map where you currently are located. Try to pan & zoom to be as accurate as you can for testing.</span>
             <br><span id="points"></span>
         </p>
         <button id="button-locateme" class="span3 offset2 btn btn-success btn-large hidden"><span class="glyphicon glyphicon-map-marker"></span> Locate Me</button>
         <button id="button-locateme-stop" class="span3 btn btn-warning btn-large hidden"><span class="glyphicon glyphicon-stop"></span> Stop</button>
         <a id="button-locateme-data" class="span3 btn btn-info btn-large hidden" data-toggle="modal" href="#modal-data"><span class="glyphicon glyphicon-list"></span> GPS Information</a>
+        <small><a id="about" class="pull-right" data-toggle="modal" href="#modal-about">About</a></small>
     </div>
-    <!-- Fee Information Modal -->
+    <!-- Data Modal -->
     <div class="modal fade" id="modal-data" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -31,6 +32,26 @@
                 </div>
                 <div class="modal-body">
                     <div id="modal-data-data"></div>
+                    <p><br><button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button><br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div class="modal fade" id="modal-about" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">About this site</h4>
+                </div>
+                <div class="modal-body">
+                    <p><small>This web site was built for Google Geek Street Festival, occuring on
+                    July 22, 2015, by <a href="//about.me/tomkompare" target="_blank">Tom Kompare</a>
+                    of the <a href="//uchicago.edu/" target="_blank">University of Chicago</a> as a demonstration of
+                    how AGPS works in mobile devices and intercations with web sites.</small></p>
+                    <p><a href="//github.com/tkompare/CIVIC-gps-test" target="_blank"><small>The code the runs this web site is on GitHub</small></a></p>
                     <p><br><button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button><br></p>
                 </div>
             </div>
@@ -104,7 +125,7 @@
                 findAverage();
                 printPosArray();
                 $('#button-locateme-stop').addClass('hidden');
-                instructionsDiv.innerHTML = "<b>Done!</b> Number collected: " + posArray.length;
+                instructionsDiv.innerHTML = "<b>Done! Number collected: " + posArray.length + " of 10</b>";
                 pointDiv.innerHTML = "";
             }
 
@@ -113,7 +134,7 @@
                 posArray.push(NewPos);
                 var thisLatLng = new google.maps.LatLng(NewPos.lat, NewPos.lon);
                 var thisMarker = new google.maps.Marker({position: thisLatLng, map: map, icon: 'img/small-green.png'});
-                pointDiv.innerHTML = "Number Collected: " + posArray.length;
+                pointDiv.innerHTML = "Number Collected: <b>" + posArray.length + " of 10</b>";
                 posArrayMarkers.push(thisMarker);
                 if(posArray.length === 10)
                 {
@@ -265,9 +286,10 @@
 
             function initializeMap() {
                 var mapOptions = {
-                    // center: { lat: 41.883709, lng: -87.630189}, // Daley Plaza
-                    center: { lat:41.784810 , lng: -87.592604},  // 6045 S Kenwood
-                    zoom: 18
+                     center: { lat: 41.883709, lng: -87.630189}, // Daley Plaza
+                    // center: { lat:41.784810 , lng: -87.592604},  // 6045 S Kenwood
+                    // zoom: 18 // For Daley Plaza Demo
+                    zoom: 13
                 };
                 map = new google.maps.Map(document.getElementById('map'), mapOptions);
                 bounds = new google.maps.LatLngBounds();
