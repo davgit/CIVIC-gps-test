@@ -235,7 +235,7 @@
                 return avg;
             }
 
-
+            // Copyright (c) 2014 Chris Veness (See: LICENSE.TXT)
             function distance(FromPos, ToPos) {
                 var R = 6371000; // metres
                 var φ1 = toRadians(FromPos.lat);
@@ -252,14 +252,17 @@
                 return d;
             }
 
+            // Copyright (c) 2014 Chris Veness (See: LICENSE.TXT)
             function toRadians(value) {
                 return Math.PI * value / 180;
             }
 
+            // Copyright (c) 2014 Chris Veness (See: LICENSE.TXT)
             function toDegrees(number) {
                 return number * 180 / Math.PI;
             }
 
+            // Copyright (c) 2014 Chris Veness (See: LICENSE.TXT)
             function compassPoint(bearing, precision) {
                 if (precision === undefined) precision = 3;
                 // note precision = max length of compass point; it could be extended to 4 for quarter-winds
@@ -317,6 +320,7 @@
                 return point;
             }
 
+            // Copyright (c) 2014 Chris Veness (See: LICENSE.TXT)
             function bearingTo(FromPos,ToPos) {
                 var φ1 = toRadians(FromPos.lat), φ2 = toRadians(ToPos.lat);
                 var Δλ = toRadians(ToPos.lon-FromPos.lon);
