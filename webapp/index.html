@@ -160,7 +160,7 @@
                 bounds.extend(marker.getPosition());
                 bounds.extend(myLatlng);
                 for(var i=0; i<posArrayMarkers.length; i++) {
-                    bounds.extend(posArrayMarkers.getPosition());
+                    bounds.extend(posArrayMarkers[i].getPosition());
                 }
                 map.fitBounds(bounds);
                 if(map.getZoom() > 18)
