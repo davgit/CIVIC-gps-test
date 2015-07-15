@@ -18,6 +18,8 @@ Thanks, Derick! You rock.
 
 Working site: http://uchicago-tkompare-gps-test.appspot.com/
 
+Grumpy Cat found on http://www.asciify.net/ascii/show/249
+
 
 zzzzzzz#zzzz##zzzzzzzzzzzz#zzzzzznnnMWMMWMnzzzz##z#z###zz##z####zzz################zzznMMMMMMMWWWWxnnxMW@@@Wxnnnnznnnnzzz
 zzzzzzz#zz##zzz#zzzzzzzzzzzzzzzzzzzzxxnnnnzz####z#####zz##zz####zzzz#################znMWMMMMMWWMxxxM@@@@@@@Wnnnnnnnnnnnz
