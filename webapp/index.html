@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <title>GPS Accuracy Test</title>
 </head>
 <body>
@@ -52,16 +52,16 @@
                 </div>
                 <div class="modal-body">
                     <p><small>This web site was built for Google Geek Street Festival, occuring on
-                    July 22, 2015, by <a href="//about.me/tomkompare" target="_blank">Tom Kompare</a>
+                    July 22, 2015, by <a href="//webservices.uchicago.edu/about/staff/tom_kompare/" target="_blank">Tom Kompare</a>
                     of the <a href="//uchicago.edu/" target="_blank">University of Chicago</a> as a demonstration of
-                    how AGPS works in mobile devices and intercations with web sites.</small></p>
-                    <p><a href="//github.com/tkompare/CIVIC-gps-test" target="_blank"><small>The code the runs this web site is on GitHub</small></a></p>
+                    how AGPS works in mobile devices and intercations with web sites. The code the runs this web site
+                    is on <a href="//github.com/tkompare/CIVIC-gps-test" target="_blank">GitHub</a></small></p>
                     <ul>
-                        <li>To use this site to test your mobile device's GPS accuracy, please make sure you allow your browser to access your device's GPS (Location Services) in your phone's settings.</li>
+                        <li>Please make sure you allow your browser to access your device's GPS (Location Services) in your phone's settings.</li>
                         <li>After you navigate to this web site, be sure to allow it access your device's location services.</li>
-                        <li>Use your pan and zoom to get close and, as precisely as you can, click and drop a pin exactly where you are currently located.</li>
-                        <li>Click the green 'Locate Me' button to start the test. You may stop the test at any time, but the test will automatically stop after it collects 10 GPS readings.</li>
-                        <li>Click on the blue 'GPS information' button to see the results of the accuracy test.</li>
+                        <li>Use pan and zoom to get close to where you currently are, then as precisely as you can, click to drop a pin exactly where you are currently located.</li>
+                        <li>Push the green 'Locate Me' button to start the test. You may stop the test at any time, but the test will conclude after it collects 10 GPS readings.</li>
+                        <li>Push the blue 'GPS information' button to see the results of the accuracy test.</li>
                     </ul>
                     <p><br><button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button><br></p>
                 </div>
@@ -70,8 +70,8 @@
     </div>
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyB0Rr0gQPuCKtHlLPgsv1V9ZDNiNcJZxvA&sensor=true"></script>
     <script>
         //
@@ -353,6 +353,9 @@
                         animation:google.maps.Animation.DROP,
                         icon:'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'});
                     FromPos = new LatLon(marker.position.lat(), marker.position.lng());
+                    google.maps.event.addListener(marker,'dragend',function(event) {
+                        FromPos = new LatLon(event.latLng.lat(),event.latLng.lng());
+                    });
                     google.maps.event.clearListeners(map, 'click');
                     instructionsDiv.innerHTML = "";
                     $('#button-locateme').removeClass('hidden');
