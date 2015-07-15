@@ -82,7 +82,7 @@
         /*   - www.movable-type.co.uk/scripts/latlong.html                                   MIT Licence  */
         /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
 
-        (function () {
+        (function ($,google) {
             var map = null;
             var bounds = null;
             var instructionsDiv = document.getElementById("instructions");
@@ -203,15 +203,14 @@
             }
 
             function getStdDeviation() {
-                var std;
                 var distanceArray = [];
                 for(var i=0; i<posArray.length; i++) {
                     distanceArray[i] = distance(FromPos,posArray[i]);
                 }
-
                 return standardDeviation(distanceArray);
             }
 
+            // Standard Deviation by Derick Bailey (see README.TXT)
             function standardDeviation(values){
                 var avg = average(values);
 
@@ -369,7 +368,7 @@
             });
             google.maps.event.addDomListener(window, 'load', initializeMap());
 
-        })();
+        })(jQuery,google);
     </script>
 </body>
 </html>
