@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 -----------------------------------------------------------------------------
-Portions of the javascript code, namely the distance calculation functions
+Portions of the javascript code, as noted in the line above germane functions,
 fall under a separate MIT license:
 
 The MIT License (MIT)
