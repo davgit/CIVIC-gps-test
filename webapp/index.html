@@ -210,10 +210,11 @@
              * Write the collected point statistics and raw location data to the 'Test Results' pop-up/
              */
             function printPosArray() {
+                modaldatadataDiv.innerHTML = modaldatadataDiv.innerHTML + "<br>Distance to GPS Location Average: <b>" + distance(FromPos,AvgPos).toFixed(2) + " Meters</b>";
+                modaldatadataDiv.innerHTML = modaldatadataDiv.innerHTML + "<br>GPS Locations Standard Deviation: " +
+                        getStdDeviation().toFixed(2) + " Meters";
+                modaldatadataDiv.innerHTML = modaldatadataDiv.innerHTML + "<br>Compass Direction to GPS Location: " + compassPoint(bearingTo(FromPos,AvgPos),3) + "<br><br><b>Raw Locations</b>";
                 modaldatadataDiv.innerHTML = modaldatadataDiv.innerHTML + "<br>GPS Location Average: " + AvgPos.lat.toFixed(6) + " " + AvgPos.lon.toFixed(6);
-                modaldatadataDiv.innerHTML = modaldatadataDiv.innerHTML + "<br>GPS Standard Deviation: " + getStdDeviation().toFixed(2) + " Meters";
-                modaldatadataDiv.innerHTML = modaldatadataDiv.innerHTML + "<br>Distance to GPS location: <b>" + distance(FromPos,AvgPos).toFixed(2) + " Meters</b>";
-                modaldatadataDiv.innerHTML = modaldatadataDiv.innerHTML + "<br>Direction to GPS location: " + compassPoint(bearingTo(FromPos,AvgPos),3) + "<br><br><b>Raw Locations</b>";
                 for(var i=0; i<posArray.length; i++) {
                     modaldatadataDiv.innerHTML = modaldatadataDiv.innerHTML + "<br>" + posArray[i].lat.toFixed(6) + ", " + posArray[i].lon.toFixed(6);
                 }
